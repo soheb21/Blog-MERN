@@ -2,7 +2,10 @@ import { useState } from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import './App.css'
+import NotFoundPage from './pages/404Paga'
 import About from './pages/About'
+import BlogDetails from './pages/Blog-Details'
+import BloogerProfile from './pages/BloogerProfile'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
 import MyBlog from './pages/MyBlog'
@@ -22,18 +25,26 @@ function App() {
     },
     {
       path: "/my-blog",
-      element: <MyBlog/>
+      element: <BloogerProfile/>
     },
     {
       path: "/contact-us",
-      element:<Contact/>
+      element: <Contact />
     },
     {
       path: "/login",
-      element:<Registration/>
+      element: <Registration />
+    },
+    {
+      path: "/blog-details",
+      element: <BlogDetails/>
+    },
+    {
+      path: "*",
+      element: <NotFoundPage />
     }
   ])
-  
+
 
 
   return (

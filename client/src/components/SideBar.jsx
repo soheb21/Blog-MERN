@@ -3,8 +3,7 @@ import { Link, useResolvedPath } from 'react-router-dom'
 import { IoHomeOutline,IoHappyOutline,IoLogInOutline,IoPeopleOutline, IoReaderOutline} from "react-icons/io5";
 
 const SideBar = () => {
-    const [sideOpen, setsideOpen] = useState(true)
-    const [isActive, setIsActiveOpen] = useState(true)
+    const [sideOpen, setsideOpen] = useState(false)
     const SideMenu = [
         {
             id: "1",
@@ -53,7 +52,7 @@ const SideBar = () => {
                 SideMenu && SideMenu.map((item) => (
                     <Link  to={item.href} className={`${item.gap ? "mt-10 " : ""} border-b  py-4 ${sideOpen ? "px-8" : "px-2"} ${pathname===item.href && 'bg-secondary-bg'}  hover:text-secondary-text  w-full rounded-md flex items-center gap-x-2 transition-all`} key={item.id}>
                         <span className='text-xl mx-auto'>{item.Sidelogo}</span>
-                        <p className={`mx-auto text-lg ${!sideOpen && 'hidden'}   transition-all `} >{item.title}</p>
+                        {sideOpen && <p className={`mx-auto text-lg ${!sideOpen && 'hidden'}   transition-all `} >{item.title}</p>}
                     </Link>
 
                 ))
