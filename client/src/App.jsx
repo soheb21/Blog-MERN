@@ -4,11 +4,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import './App.css'
 import NotFoundPage from './pages/404Paga'
 import About from './pages/About'
+import AddBlogandEdit from './pages/AddBlogandEdit'
+import Admin from './pages/admin/Admin'
 import BlogDetails from './pages/Blog-Details'
 import BloogerProfile from './pages/BloogerProfile'
 import Contact from './pages/Contact'
 import Home from './pages/Home'
-import MyBlog from './pages/MyBlog'
 import Registration from './pages/Registration'
 
 
@@ -24,8 +25,8 @@ function App() {
       element: <About />
     },
     {
-      path: "/my-blog",
-      element: <BloogerProfile/>
+      path: "/profile",
+      element: <BloogerProfile />
     },
     {
       path: "/contact-us",
@@ -37,7 +38,15 @@ function App() {
     },
     {
       path: "/blog-details",
-      element: <BlogDetails/>
+      element: <BlogDetails />
+    },
+    {
+      path: "/add-blog",
+      element: <AddBlogandEdit />
+    },
+    {
+      path: "/admin",
+      element: <Admin />
     },
     {
       path: "*",

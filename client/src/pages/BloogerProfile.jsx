@@ -17,6 +17,7 @@ const BloogerProfile = () => {
                         <p className='flex items-center gap-1 text-xl'>Blogger-Logo</p>
                         <p className='flex items-center gap-1 text-2xl'>@Shoeb</p>
                         <p className='flex items-center gap-1'><span>created At</span>Date 12-2-23</p>
+                        <Link to={"/add-blog"} className='bg-green-500 transition-all hover:bg-green-200 hover:text-secondary-btn px-2 rounded-md flex items-center gap-1 text-xl'>Add Blog</Link>
                     </div>
                     {/* homeImage blog main image */}
                     <div>

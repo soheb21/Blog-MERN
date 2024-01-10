@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
 import { Link, useResolvedPath } from 'react-router-dom'
 import { IoHomeOutline,IoHappyOutline,IoLogInOutline,IoPeopleOutline, IoReaderOutline} from "react-icons/io5";
+import { RiAdminLine } from "react-icons/ri";
 
 const SideBar = () => {
     const [sideOpen, setsideOpen] = useState(false)
     const SideMenu = [
+        {
+            id: "0",
+            title: "Admin",
+            href: "/admin",
+            admin:true,
+            Sidelogo: <RiAdminLine />
+        },
+       
         {
             id: "1",
             title: "Home",
@@ -12,6 +21,7 @@ const SideBar = () => {
             href: "/",
             gap: true
         },
+
         {
             id: "2",
             title: "About",
@@ -20,10 +30,11 @@ const SideBar = () => {
         },
         {
             id: "3",
-            title: "My Blog",
-            href: "/my-blog",
+            title: "Profile",
+            href: "/profile",
             Sidelogo: <IoHappyOutline />
         },
+        
 
         {
             id: "4",
