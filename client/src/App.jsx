@@ -33,7 +33,7 @@ function App() {
       element: <Contact />
     },
     {
-      path: "/login",
+      path: "/registration",
       element: <Registration />
     },
     {

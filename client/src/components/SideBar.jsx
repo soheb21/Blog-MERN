@@ -46,7 +46,7 @@ const SideBar = () => {
         {
             id: "5",
             title: "Login",
-            href: "/login",
+            href: "/registration",
             Sidelogo: <IoLogInOutline />,
         }
     ]
