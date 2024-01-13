@@ -1,8 +1,8 @@
 const express = require("express");
-const { getAllBloggers, addAdminDetails, editAdminDetails, deleteAdminDetails } = require("../controller/adminCtrl");
+const { getAllBloggertoAdmin, addAdminDetails, editAdminDetails, deleteAdminDetails } = require("../controller/adminCtrl");
 const router = express.Router();
 
-router.get("/", getAllBloggers)
+router.get("/", getAllBloggertoAdmin)
     .post("/", addAdminDetails)
     .patch("/:id", editAdminDetails)
     .delete("/:id", deleteAdminDetails)

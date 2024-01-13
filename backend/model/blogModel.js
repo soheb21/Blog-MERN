@@ -20,6 +20,7 @@ const BlogProfileModel = mongoose.model("blogProfile", blogProfileSchema);
 const blogSchema = mongoose.Schema({
 
     blog_Title: { type: String, required: true },
+    category: { type: String, required: true },
     blog_details: [{ type: String, required: true }],
     blog_1_img: { type: String, required: true },
     blog_2_img: { type: String },
