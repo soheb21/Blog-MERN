@@ -2,7 +2,7 @@ const { BlogModel } = require("../model/blogModel");
 
 exports.getAllBlogs = async (req, res) => {
     try {
-        let query = await BlogModel.find({});
+        let query = BlogModel.find({});
         if (req.query.category) {
             query = query.find({ category: req.query.category })
         }

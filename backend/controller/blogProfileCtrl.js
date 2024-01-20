@@ -22,17 +22,16 @@ exports.getProfileDetails = async (req, res) => {
 }
 exports.addProfile = async (req, res) => {
     try {
-        const { bloggerName } = req.body;
-        const newbloggerName = await BlogProfileModel.find({ bloggerName });
-        if (newbloggerName) return res.status(201).json({ success: false, message: "@bloggername is already exits!" });
+        const { userName } = req.body;
+        const newbloggerName = await BlogProfileModel.find({ userName: userName });
         const bloggerprofile = new BlogProfileModel(req.body);
         await bloggerprofile.save();
         res.status(201).json({ success: true, message: "Blogger is Added Successfully" });
 
     } catch (error) {
-        res.status(401).json({ success: false, message: "Failed to Add Blogger Data" });
-        console.log("addBlogger error", error)
-    }
+    res.status(401).json({ success: false, message: "Failed to Add Blogger Data" });
+    console.log("addBlogger error", error)
+}
 }
 exports.editProfile = async (req, res) => {
     try {

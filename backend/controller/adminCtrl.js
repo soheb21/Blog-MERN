@@ -16,18 +16,18 @@ exports.getAllBloggertoAdmin = async (req, res) => {
         console.log("Admin get admins  error", error)
     }
 }
-exports.addAdminDetails = async (req, res) => {
-    try {
-        const adminDetails = new AdminModel(req.body);
-        await adminDetails.save();
-        res.status(201).json({ success: false, message: "Add Admin Details Successfully" });
+// exports.addAdminDetails = async (req, res) => {
+//     try {
+//         const adminDetails = new AdminModel(req.body);
+//         await adminDetails.save();
+//         res.status(201).json({ success: false, message: "Add Admin Details Successfully" });
 
 
-    } catch (error) {
-        res.status(401).json({ success: false, message: "Failed to Add Admin Details Data" });
-        console.log("Admin add Details error", error)
-    }
-}
+//     } catch (error) {
+//         res.status(401).json({ success: false, message: "Failed to Add Admin Details Data" });
+//         console.log("Admin add Details error", error)
+//     }
+// }
 exports.editAdminDetails = async (req, res) => {
     try {
         const { id } = req.params;
