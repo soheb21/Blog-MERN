@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout'
 import { FaRegCircleUser } from "react-icons/fa6";
 import { ImCalendar } from "react-icons/im";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllBlogsAsync, selectAllBlogs } from '../feature/blog/blogSlice';
 
 
 
 const Home = () => {
+    const dispatch = useDispatch();
+    const blogs= useSelector(selectAllBlogs)
+    console.log(blogs)
+    useEffect(()=>{
+        dispatch(getAllBlogsAsync())
+    },[])
     return (
         <Layout>
             <div className="w-full flex justify-between gap-4 p-2 items-center">
@@ -57,6 +65,7 @@ const Home = () => {
                         <Link className='flex justify-end mt-2' to={"/blog-details"}><button className='bg-primary-btn w-fit md:w-24 md:text-xl  rounded-md p-2 '>Details</button></Link>
                     </div>
                 </div>
+                
                 <div className='border rounded-md  w-full h-fit no-scrollbar flex flex-col gap-4 overflow-hidden overflow-y-scroll  p-2'>
                     {/* header user and date*/}
                     <div className='flex border rounded-md gap-4 w-full justify-end md:p-2'>
@@ -74,6 +83,7 @@ const Home = () => {
                         <Link className='flex justify-end mt-2' to={"/about"}><button className='bg-primary-btn w-fit md:w-24 md:text-xl  rounded-md p-2 '>Details</button></Link>
                     </div>
                 </div>
+               
                 <div className='border rounded-md  w-full h-fit no-scrollbar flex flex-col gap-4 overflow-hidden overflow-y-scroll  p-2'>
                     {/* header user and date*/}
                     <div className='flex border rounded-md gap-4 w-full justify-end md:p-2'>
