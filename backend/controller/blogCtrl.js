@@ -1,4 +1,6 @@
+
 const { BlogModel } = require("../model/blogModel");
+
 
 exports.getAllBlogs = async (req, res) => {
     try {
@@ -85,5 +87,21 @@ exports.getBlogDetails = async (req, res) => {
     } catch (error) {
         res.status(401).json({ success: false, message: "Failed to fetch Blog details Data" });
         console.log("Blog details error", error)
+    }
+}
+exports.addComments = async (req, res) => {
+    try {
+        //blogDetails id
+        const { id } = req.params;
+        const { comments } = req.body;
+        const blog = await BlogModel.findById({ _id: id });
+        const comment = blog.comments;
+        comment.push(comments)
+        const data = await blog.save();
+        res.status(201).json({ success: true, data })
+
+    } catch (error) {
+        res.status(401).json({ success: false, message: "Failed to add Blog Commments details Data" });
+        console.log("comment error", error)
     }
 }

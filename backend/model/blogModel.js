@@ -26,6 +26,9 @@ const blogSchema = mongoose.Schema({
     blog_2_img: { type: String },
     blog_3_img: { type: String },
     userBlogId: { type: mongoose.Schema.Types.ObjectId, ref: "blogProfile", required: true },
+    //In future we change this 2 field in sepaarte MODEl
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "user", required: true },
+    comments: []
 
 
 }, opts)
